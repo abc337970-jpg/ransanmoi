@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Siêu Rắn Săn Mồi 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="game-container">
+    <canvas id="snakeGame"></canvas>
+
+    <div id="main-menu" class="overlay">
+        <h1>RẮN SĂN MỒI</h1>
+        <button class="btn" onclick="startGame()">BẮT ĐẦU CHƠI</button>
+        <button class="btn" style="background:#2196F3" onclick="toggleMenu('custom-menu')">TÙY CHỈNH RẮN</button>
+    </div>
+
+    <div id="custom-menu" class="overlay hidden">
+        <h2>TÙY CHỈNH</h2>
+        <div class="input-group">
+            <label>Tên người chơi:</label>
+            <input type="text" id="playerName" placeholder="Nhập tên..." maxlength="10">
+        </div>
+        <div class="input-group">
+            <label>Màu sắc rắn:</label>
+            <input type="color" id="snakeColor" value="#4CAF50">
+        </div>
+        <button class="btn" onclick="toggleMenu('main-menu')">LƯU & QUAY LẠI</button>
+    </div>
+
+    <div id="death-menu" class="overlay hidden">
+        <h2 style="color: #ff4444;">BẠN ĐÃ THUA!</h2>
+        <p id="final-score">Điểm: 0</p>
+        <label class="checkbox-container">
+            <input type="checkbox" id="includeName" checked> Hiển thị tên trên ảnh
+        </label>
+        <button class="btn" onclick="startGame()">CHƠI LẠI</button>
+        <button class="btn" style="background:#FF9800" onclick="downloadAchievement()">TẢI ẢNH THÀỰC</button>
+    </div>
+
+    <div id="controls" class="hidden">
+        <div style="grid-column: 2" class="joy-btn" onclick="changeDir('up')">↑</div>
+        <div style="grid-column: 1" class="joy-btn" onclick="changeDir('left')">←</div>
+        <div style="grid-column: 3" class="joy-btn" onclick="changeDir('right')">→</div>
+        <div style="grid-column: 2" class="joy-btn" onclick="changeDir('down')">↓</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
